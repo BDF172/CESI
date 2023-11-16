@@ -32,5 +32,5 @@ private:
 	void obj_ini(std::string messageToSet, int level);
 	std::string m_msg;
 	
-	bool level1Bool, level2Bool, level3Bool;
+	int encryptionLevel;
 };

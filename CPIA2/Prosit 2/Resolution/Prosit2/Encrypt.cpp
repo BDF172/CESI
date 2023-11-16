@@ -3,9 +3,7 @@
 using namespace std;
 
 void Encrypt::setEncryptionLevel(int level) {
-	level1Bool = (level == 1 || level == 3);
-	level2Bool = (level == 2 || level == 3);
-	level3Bool = (level == 3);
+	encryptionLevel = level;
 }
 
 void Encrypt::obj_ini(string messageToSet, int level) {
@@ -34,29 +32,29 @@ string Encrypt::getMsg() const {
 }
 
 void Encrypt::setMsg(std::string toSet) {
-	if (level1Bool || level2Bool)throw runtime_error("Vous essayez de changer le contenu du message pourtant encrypte");
+	if (encryptionLevel > 0)throw runtime_error("Vous essayez de changer le contenu du message pourtant encrypte");
 	m_msg = "#" + toSet + "#";
 }
 
 void Encrypt::level1(int niveau) {
-	if (level1Bool) throw runtime_error("Le message a deja ete encrypte par cesar");
+	if (encryptionLevel == 1) throw runtime_error("Le message a deja ete encrypte par cesar");
 	for (; niveau > 0; niveau--) {
 		for (int i = 0; i < m_msg.size(); i++) {
 			m_msg[i] = (m_msg[i]) >= 126 ? 32 : m_msg[i] + 1;
 		}
 	}
-	level1Bool = true;
+	encryptionLevel = 1;
 }
 
 void Encrypt::level1Decrypt(int niveau) {
-	if (!level1Bool) throw runtime_error("Le message n'est pas encrypte en cesar");
-	if (level2Bool) throw runtime_error("Le message ne peut pas etre decrypte en cesar sans etre decrypte du XOR");
+	if (!encryptionLevel == 1) throw runtime_error("Le message n'est pas encrypte en cesar");
+	if (encryptionLevel > 1) throw runtime_error("Le message ne peut pas etre decrypte en cesar sans etre decrypte du XOR");
 	for (; niveau > 0; niveau--) {
 		for (int i = 0; i < m_msg.size(); i++) {
 			m_msg[i] = (m_msg[i] <= 32) ? 126 : m_msg[i] - 1;
 		}
 	}
-	level1Bool = false;
+	encryptionLevel = 0;
 }
 
 void Encrypt::encryptDecryptXOR(string& message, const string& key) {
@@ -67,27 +65,26 @@ void Encrypt::encryptDecryptXOR(string& message, const string& key) {
 
 
 void Encrypt::level2(string cle) {
-	if (level2Bool) throw runtime_error("Le message est deja encrypte xor");
+	if (encryptionLevel == 2) throw runtime_error("Le message est deja encrypte xor");
 	encryptDecryptXOR(m_msg, cle);
-	level2Bool = true;
+	encryptionLevel = 2;
 }
 
 void Encrypt::level2Decrypt(string cle) {
-	if (!level2Bool) throw runtime_error("Le message n'est pas encrypte xor");
+	if (!encryptionLevel > 1) throw runtime_error("Le message n'est pas encrypte xor");
 	encryptDecryptXOR(m_msg, cle);
-	level2Bool = false;
+	encryptionLevel = (encryptionLevel == 3);
 }
 
 void Encrypt::level3(int niveau, string cle) {
 	level1(niveau);
 	level2(cle);
-	level3Bool = true;
+	encryptionLevel = 3;
 }
 
 void Encrypt::level3Decrypt(int niveau, std::string cle) {
 	level2Decrypt(cle);
 	level1Decrypt(niveau);
-	level3Bool = false;
 }
 
 bool Encrypt::writeToFile(string fileName) {
@@ -97,10 +94,7 @@ bool Encrypt::writeToFile(string fileName) {
 		cout << "Impossible d'ouvrir le ficihier" << endl;
 		return false;
 	}
-	string encryption;
-	if (getEncryptionLevel() == 3) encryption = "3";
-	else if (getEncryptionLevel() == 1) encryption = "1";
-	else if (getEncryptionLevel() == 2) encryption = "2";
+	string encryption = to_string(encryptionLevel);
 	file << encryption;
 	for (char i : getMsg()) {
 		file << static_cast<BYTE>(i);
@@ -122,8 +116,5 @@ bool Encrypt::readFromFile(std::string fileName) {
 }
 
 int Encrypt::getEncryptionLevel() const {
-	if (level3Bool) return 3;
-	if (level2Bool) return 2;
-	if (level1Bool) return 1;
-	return 0;
+	return encryptionLevel;
 }
