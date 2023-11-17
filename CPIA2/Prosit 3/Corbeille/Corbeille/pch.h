@@ -9,10 +9,15 @@
 
 #include <iostream>
 #include <string>
+#include <Windows.h>
+#include <vector>
+
+#pragma comment(lib, "user32.lib")
 
 // ajouter les en-têtes à précompiler ici
 
 #include "exo1.h"
-
+#include "exo2.h"
+#include "exo3.h"
 
 #endif //PCH_H
