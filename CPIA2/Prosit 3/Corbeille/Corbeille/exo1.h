@@ -4,7 +4,7 @@ class Voiture {
 public:
 	Voiture();
 	Voiture(int vitesseMax, int acceleration);
-	~Voiture();
+	virtual ~Voiture();
 
 	virtual void setVitesseMax(int vitesseMax);
 	virtual void setAcceleration(int acceleration);
@@ -30,10 +30,15 @@ class VoitureSport : public Voiture {
 public:
 	VoitureSport();
 	VoitureSport(int vitesseMax, int acceleration);
+	virtual ~VoitureSport();
 
 	void setVitesseMax(int vitesseMax) override;
 	void setAcceleration(int acceleration) override;
 
+	static int getNbVoitures();
+
 private:
-	int nbObj;
+	static int nbObjSpo;
 };
+
+int mainExo1(void);
