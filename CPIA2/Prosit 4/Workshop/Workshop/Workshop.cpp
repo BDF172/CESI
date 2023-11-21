@@ -3,5 +3,5 @@
 using namespace std;
 
 int main(void) {
-	return mainExo3();
+	return mainExo2();
 }

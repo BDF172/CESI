@@ -1,20 +1,19 @@
 #pragma once
 
-typedef struct objetChaine {
-	Objet2D* maillon;
-	objetChaine* maillonSuivant;
-} objetChaine;
-
 class Objet2DChaine {
 public:
 	Objet2DChaine(void);
 	Objet2DChaine(Objet2D* premierMaillon);
 
-	void addMaillon(Objet2D* toAdd);
+	int getNbObjets();
+
+	void addMaillonAtTail(Objet2D* toAdd);
+	void addMaillonAtHead(Objet2D* toAdd);
+	void addMaillonAtIndex(Objet2D* toAdd, int index);
 	void afficherInfos(void);
 
 private:
 	Objet2D* head;
 };
 
-int mainExo2(void);
+int mainExo2(void)
