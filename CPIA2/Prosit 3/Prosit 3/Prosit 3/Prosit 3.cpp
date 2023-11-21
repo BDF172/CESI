@@ -24,8 +24,6 @@ int main(void)
         while (true);
     }
 
-    
-
     cout << parcours->calculDistance() << endl;
     parcours->afficherMessage();
     delete p1, p2, p3;
@@ -47,6 +45,8 @@ int main(void)
 
     cout << parcours->calculDistance() << endl;
     parcours->afficherMessage();
+    delete p1, p2, p3;
+    delete parcours;
 
     return 0;
 }
