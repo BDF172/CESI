@@ -4,16 +4,15 @@ using namespace std;
 
 int main(void) {
 	fonctionCallback antenne = &Receiver::receiveMessage;
-	Emetter radio1(1);
-	Emetter radio2(2);
+	Emetter radios[3];
 
 	thread myThreads[5];
 	for (int i = 0; i < 5; i++) {
-		myThreads[i] = thread(createRadioStation);
+		myThreads[i] = thread(createRadioStation, 3);
 		myThreads[i].detach();
 	}
 
-	connectToRadio(&radio1, antenne);
+	connectToRadio(radios, 3, antenne);
 	Receiver::turnOffAntenna();
 
 	return 0;

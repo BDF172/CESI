@@ -7,7 +7,7 @@ public:
 	void listen();
 	void sAbonner(int toSub);
 	void update(void);
-	int getID(void) { return m_ID; }
+	size_t getID(void) { return m_ID; }
 
 	static void receiveMessage(std::string message, int from);
 	static bool getAntennaState(void) { return antennaState; }

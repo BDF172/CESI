@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int connectToRadio(Emetter* emetter, fonctionCallback antenne) {
+int connectToRadio(Emetter* emetter, int nbRadios, fonctionCallback antenne) {
     // Initialisation de Winsock
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
@@ -51,7 +51,7 @@ int connectToRadio(Emetter* emetter, fonctionCallback antenne) {
         return -1;
     }
 
-    radioHostHandle(emetter, antenne, clientSocket);
+    radioHostHandle(emetter, nbRadios, antenne,clientSocket);
 
     // Fermer les sockets
     closesocket(clientSocket);
@@ -68,7 +68,7 @@ string receiveMessage(SOCKET clientSocket) {
         if (bytesRead > 0 && bytesRead < 1024) {
             buffer[bytesRead] = '\0';
             std::string receivedMessage(buffer);
-            return receivedMessage;
+            return receivedMessage.substr(0, receivedMessage.size()-1);
         }
         else {
             return "##RST##";
@@ -80,17 +80,26 @@ int sendMessage(SOCKET clientSocket, string messageToSend) {
     return send(clientSocket, messageToSend.c_str(), messageToSend.size(), 0);
 }
 
-void radioHostHandle(Emetter* emetter, fonctionCallback antenne, SOCKET clientSocket) {
+bool isIntPossible(string toTest) {
+    for (char i : toTest) {
+        if (!isdigit(i)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void radioHostHandle(Emetter* emetter, size_t nbEme, fonctionCallback antenne, SOCKET clientSocket) {
     string userEntry;
     while (true) {
-        if(sendMessage(clientSocket, "Veuillez selectionner une radio (1/2) : ") == -1) return;
-        if((userEntry = receiveMessage(clientSocket)) == "##RST##")return;
-        if (userEntry.substr(0, userEntry.size()-1) != "1" && userEntry.substr(0, userEntry.size() - 1) != "2") {
+        if(sendMessage(clientSocket, "Veuillez selectionner une radio (-1 pour quitter) : ") == -1) return;
+        if((userEntry = receiveMessage(clientSocket)) == "##RST##" || userEntry == "-1")return;
+        if (!isIntPossible(userEntry) || atoi(userEntry.c_str()) > nbEme) {
             if (sendMessage(clientSocket, "Vous n'avez pas fait un choix valide\n") == -1) return;
             continue;
         }
         if (sendMessage(clientSocket, "Veuillez ecrire un message a envoyer : ") == -1) return;
         if ((userEntry = receiveMessage(clientSocket)) == "##RST##")return;
-        emetter->diffuserMessage(userEntry, antenne);
+        emetter[atoi(userEntry.c_str())].diffuserMessage(userEntry, antenne);
     }
 }

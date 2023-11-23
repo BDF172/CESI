@@ -2,7 +2,13 @@
 
 using namespace std;
 
-Emetter::Emetter(int ID) : m_ID(ID) {}
+mutex Emetter::objLock;
+size_t Emetter::nbObj = 0;
+
+Emetter::Emetter() {
+	lock_guard<mutex> lock(objLock);
+	m_ID = ++nbObj;
+}
 
 void Emetter::diffuserMessage(std::string message, fonctionCallback antenne) {
 	antenne(message, m_ID);

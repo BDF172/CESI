@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void createRadioStation(void) {
+void createRadioStation(int nbRadios) {
 	Receiver poste;
 	poste.sAbonner(1);
 	poste.update();

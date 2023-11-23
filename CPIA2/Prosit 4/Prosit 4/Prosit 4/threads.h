@@ -1,2 +1,2 @@
 #pragma once
-void createRadioStation(void);
+void createRadioStation(int nbRadios);
