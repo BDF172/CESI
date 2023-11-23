@@ -3,7 +3,13 @@
 using namespace std;
 
 Objet2DChaine::Objet2DChaine(void) : head(nullptr) {}
-Objet2DChaine::Objet2DChaine(Objet2D *first) : head(first) {}
+Objet2DChaine::Objet2DChaine(Objet2D *tete) : head(tete) {}
+Objet2DChaine::~Objet2DChaine(void) { deleteChaine(head); }
+
+void Objet2DChaine::deleteChaine(Objet2D* tete) {
+	if (tete->getSuivant() != nullptr) deleteChaine(tete->getSuivant());
+	delete tete;
+}
 
 int Objet2DChaine::getNbObjets() {
 	int nb = 0;
@@ -62,15 +68,13 @@ void Objet2DChaine::afficherInfos(void) {
 }
 
 int mainExo2(void) {
-	Carre carre(6);
-	Rectangle rectangle1(4, 5), rectangle2(10, 10);
+	Objet2DChaine *maChaine = new Objet2DChaine;
+	maChaine->addMaillonAtTail(new Rectangle(4,5));
+	maChaine->addMaillonAtHead(new Carre(6));
+	maChaine->addMaillonAtIndex(new Rectangle(10, 10), 1);
 
-	Objet2DChaine maChaine;
-	maChaine.addMaillonAtTail(&rectangle1);
-	maChaine.addMaillonAtHead(&carre);
-	maChaine.addMaillonAtIndex(&rectangle2, 1);
-
-	maChaine.afficherInfos();
+	maChaine->afficherInfos();
+	delete maChaine;
 
 	return 0;
 }

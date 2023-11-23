@@ -3,7 +3,8 @@
 class Objet2DChaine {
 public:
 	Objet2DChaine(void);
-	Objet2DChaine(Objet2D* premierMaillon);
+	Objet2DChaine(Objet2D* tete);
+	~Objet2DChaine(void);
 
 	int getNbObjets();
 
@@ -13,6 +14,7 @@ public:
 	void afficherInfos(void);
 
 private:
+	void deleteChaine(Objet2D* tete);
 	Objet2D* head;
 };
 
