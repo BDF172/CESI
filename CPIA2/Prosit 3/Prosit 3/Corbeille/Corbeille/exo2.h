@@ -14,3 +14,5 @@ class Saxo : public Instrument {
 public:
 	void playInstrument(void);
 };
+
+int mainExo2(void);
