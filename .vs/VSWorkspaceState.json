@@ -3,12 +3,11 @@
     "",
     "\\CPIA2",
     "\\CPIA2\\Prosit 4",
-    "\\CPIA2\\Prosit 4\\Prosit 4",
-    "\\CPIA2\\Prosit 4\\Prosit 4\\Prosit 4",
-    "\\CPIA2\\Prosit 5",
-    "\\CPIA2\\Prosit 5\\Prosit 5",
-    "\\CPIA2\\Prosit 5\\Prosit 5\\Prosit 5"
+    "\\CPIA2\\Prosit 4\\Corbeille\\Corbeille",
+    "\\CPIA2\\Prosit 4\\Workshop",
+    "\\CPIA2\\Prosit 4\\Workshop\\Workshop",
+    "\\CPIA2\\Prosit 5"
   ],
-  "SelectedNode": "\\CPIA2\\Prosit 4\\Prosit 4\\Prosit 4\\Prosit 4.cpp",
+  "SelectedNode": "\\CPIA2\\Prosit 4\\Workshop\\Workshop\\exo2.cpp",
   "PreviewInSolutionExplorer": false
 }

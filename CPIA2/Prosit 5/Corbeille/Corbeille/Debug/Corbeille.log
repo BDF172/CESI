@@ -1,0 +1,9 @@
+﻿  Corbeille.cpp
+  exo1.cpp
+  MyForm.cpp
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Corbeille\Corbeille\MyForm.cpp(12,2): error C2653: 'testWin' : n'est pas un nom de classe ni d'espace de noms
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Corbeille\Corbeille\MyForm.cpp(12,11): error C2065: 'MyForm' : identificateur non déclaré
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Corbeille\Corbeille\MyForm.cpp(12,18): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'monFormulaire'
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Corbeille\Corbeille\MyForm.cpp(12,18): error C2065: 'monFormulaire' : identificateur non déclaré
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Corbeille\Corbeille\MyForm.cpp(13,21): error C2065: 'monFormulaire' : identificateur non déclaré
+  Génération de code en cours...

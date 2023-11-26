@@ -17,9 +17,8 @@ public:
 void main(void){
 	double i;
 	A* p;
-	for (i = 0; i < 100000; i++){
+	for (i = 0; i < 100000; i++) {
 		p = new A(10);
 		delete p;  // Supprimer p pour libérer la mémoire prise et appeler son
-				   // destructeur pour libérer la mémoire de son tableau dynamique
-	}
+	}			   // destructeur pour libérer la mémoire de son tableau dynamique
 }

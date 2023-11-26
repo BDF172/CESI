@@ -1,5 +1,3 @@
-﻿  exo6-7.cpp
-  exo7.cpp
+﻿  exo7.cpp
 C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 4\Corbeille\Corbeille\exo7.cpp(17,16): warning C4326: le type de retour de 'main' doit être 'int' au lieu de 'void'
-  Génération de code en cours...
   Corbeille.vcxproj -> C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 4\Corbeille\Debug\Corbeille.exe

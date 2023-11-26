@@ -1,0 +1,2 @@
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\x64\Debug\Resolution.MyForm.resources
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\x64\Debug\Resolution.vcxproj.GenerateResource.cache

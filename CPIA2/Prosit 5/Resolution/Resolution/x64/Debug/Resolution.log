@@ -1,0 +1,11 @@
+﻿  CLexplorateur.cpp
+  CLimages.cpp
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\CLimages.cpp(13,35): warning C4101: 'ex' : variable locale non référencée
+  CLserviceFichier.cpp
+  CLserviceImage.cpp
+  errorMessages.cpp
+  MyForm.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Génération de code en cours...
+  CLexplorateur.obj : module MSIL détecté ; liens incrémentiels désactivés pour MSIL ; édition de liens complète en cours
+  Resolution.vcxproj -> C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\x64\Debug\Resolution.exe

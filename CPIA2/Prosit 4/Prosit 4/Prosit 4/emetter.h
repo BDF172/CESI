@@ -7,7 +7,7 @@ public:
 	Emetter(void);
 	void diffuserMessage(std::string message, fonctionCallback antenne);
 private:
-	int m_ID;
+	size_t m_ID;
 	static size_t nbObj;
 	static std::mutex objLock;
 };

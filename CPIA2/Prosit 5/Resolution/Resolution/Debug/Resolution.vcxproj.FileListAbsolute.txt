@@ -1,0 +1,3 @@
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\Debug\Resolution.vcxproj.AssemblyReference.cache
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\Debug\Resolution.MyForm.resources
+C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\Debug\Resolution.vcxproj.GenerateResource.cache
