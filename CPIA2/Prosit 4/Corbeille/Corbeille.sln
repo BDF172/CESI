@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.34114.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Corbeille", "Corbeille\Corbeille.vcxproj", "{338BF2E1-26D0-4189-9144-1EFC7EA8C0DE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prosit 5", "..\..\Prosit 5\Prosit 5\Prosit 5.vcxproj", "{17B44B27-1025-484D-94B4-2DE206C2AF5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{338BF2E1-26D0-4189-9144-1EFC7EA8C0DE}.Release|x64.Build.0 = Release|x64
 		{338BF2E1-26D0-4189-9144-1EFC7EA8C0DE}.Release|x86.ActiveCfg = Release|Win32
 		{338BF2E1-26D0-4189-9144-1EFC7EA8C0DE}.Release|x86.Build.0 = Release|Win32
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Debug|x64.ActiveCfg = Debug|x64
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Debug|x64.Build.0 = Debug|x64
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Debug|x86.ActiveCfg = Debug|Win32
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Debug|x86.Build.0 = Debug|Win32
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Release|x64.ActiveCfg = Release|x64
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Release|x64.Build.0 = Release|x64
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Release|x86.ActiveCfg = Release|Win32
+		{17B44B27-1025-484D-94B4-2DE206C2AF5D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

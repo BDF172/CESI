@@ -4,5 +4,5 @@ using namespace std;
 
 
 int main(void) {
-	return mainExo1();
+	return mainExo2();
 }
