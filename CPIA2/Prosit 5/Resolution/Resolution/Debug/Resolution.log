@@ -1,4 +1,0 @@
-﻿  MyForm.cpp
-C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Resolution\MyForm.cpp(8,6): warning C4007: 'WinMain' : doit être '__stdcall'
-  CLexplorateur.obj : module MSIL détecté ; liens incrémentiels désactivés pour MSIL ; édition de liens complète en cours
-  Resolution.vcxproj -> C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 5\Resolution\Debug\Resolution.exe

@@ -1,2 +1,0 @@
-C:\Users\ilias\Documents\GitHub\CESI\CPIA2\Prosit 3\Corbeille\Corbeille\Debug\Corbeille.vcxproj.AssemblyReference.cache
-C:\Users\ilias\source\repos\CESI\CPIA2\Prosit 3\Prosit 3\Corbeille\Corbeille\Debug\Corbeille.vcxproj.AssemblyReference.cache
